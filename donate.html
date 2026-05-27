@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Give &mdash; Go Inspire Now</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -141,6 +141,24 @@ footer{background:var(--lav-mid);}
   nav{padding:0 1.2rem;}
   .nav-links{display:none;}
 }
+
+/* ── GRAIN TEXTURE ── */
+.gin-grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:0.038;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+/* ── SHOE CURSOR ── */
+body{cursor:none;}
+a,button,label,select,input,textarea{cursor:none!important;}
+@media(hover:none){body,a,button,label,select,input,textarea{cursor:auto!important;}}
+#gin-cursor{
+  position:fixed;left:-100px;top:-100px;
+  pointer-events:none;z-index:10000;
+  font-size:42px;line-height:1;user-select:none;
+  transform:rotate(-15deg);
+  transition:font-size .15s ease,transform .15s ease;
+  filter:drop-shadow(0 2px 10px rgba(240,36,122,.5));}
+#gin-cursor.hov{font-size:54px;transform:rotate(-22deg);}
+@media(hover:none){#gin-cursor{display:none;}}
 </style>
 </head>
 <body>
@@ -327,6 +345,22 @@ document.querySelectorAll('.stats-num[data-target]').forEach(el => {
   }, { threshold: 0.5 });
   co.observe(el);
 });
+
+// Shoe cursor
+(function(){
+  var c = document.getElementById('gin-cursor');
+  if(!c) return;
+  document.addEventListener('mousemove',function(e){
+    c.style.left = (e.clientX - 6) + 'px';
+    c.style.top  = (e.clientY - 32) + 'px';
+  });
+  document.querySelectorAll('a,button').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ c.classList.add('hov'); });
+    el.addEventListener('mouseleave',function(){ c.classList.remove('hov'); });
+  });
+})();
 </script>
+<div id="gin-cursor">👟</div>
+<div class="gin-grain"></div>
 </body>
 </html>
