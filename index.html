@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;min-height:100%;
+html{scroll-behavior:smooth;min-height:100%;overflow-x:hidden;max-width:100%;
   background:linear-gradient(168deg,#FFF0F8 0%,#F3EEFF 20%,#E9F6FF 42%,#EDE8FF 64%,#FFF1F5 83%,#F8F4FF 100%);}
-body{font-family:'Inter',sans-serif;background:transparent;color:#1C1025;overflow-x:hidden;position:relative;}
+body{font-family:'Inter',sans-serif;background:transparent;color:#1C1025;overflow-x:hidden;max-width:100%;position:relative;}
 img{display:block;max-width:100%;height:auto;}
 a{text-decoration:none;color:inherit;}
 
@@ -629,11 +629,11 @@ footer{background:var(--lav-mid);}
 }
 
 /* ── AMBIENT BLOB LAYER ── */
-#gin-ambient{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;}
+#gin-ambient{position:absolute;top:0;left:0;width:100%;bottom:0;overflow:hidden;pointer-events:none;z-index:0;}
 section,footer{position:relative;z-index:1;}
 
 /* ── GRAIN TEXTURE ── */
-.gin-grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:0.038;
+.gin-grain{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;opacity:0.038;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* ── PODCAST HOME ── */

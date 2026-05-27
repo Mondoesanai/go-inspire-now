@@ -9,7 +9,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;overflow-x:hidden;}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1C1025;overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1C1025;overflow-x:hidden;max-width:100%;}
 img{display:block;max-width:100%;height:auto;}
 a{text-decoration:none;color:inherit;}
 
@@ -186,7 +186,7 @@ footer{background:var(--lav-mid);}
 }
 
 /* ── GRAIN TEXTURE ── */
-.gin-grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:0.038;
+.gin-grain{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;opacity:0.038;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
 /* ── SHOE CURSOR ── */
