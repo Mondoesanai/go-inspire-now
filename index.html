@@ -501,26 +501,60 @@ footer{background:var(--lav-mid);}
   .prog-panel.active{grid-template-columns:1fr;gap:2rem;}
   .split-cta-inner{grid-template-columns:1fr;gap:2.5rem;}
   .split-cta-photo{aspect-ratio:3/2;}
-  .stats-grid{grid-template-columns:1fr;border:none;gap:0;}
+  .stats-grid{grid-template-columns:1fr 1fr;border:none;gap:0;}
   .stats-item{border-right:none;border-bottom:1.5px solid var(--border);padding:1.5rem 0;}
+  .stats-item:nth-child(even){border-left:1.5px solid var(--border);}
   .stats-item:last-child{border-bottom:none;}
   .get-involved-inner{grid-template-columns:1fr;gap:2rem;}
   .footer-top{grid-template-columns:1fr;gap:2rem;}
+  .footer-cols{grid-template-columns:1fr 1fr;}
+  .podcast-ep-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding-top:3.5rem;padding-bottom:3.5rem;}
+  .prog-tab-icon{width:40px;height:40px;font-size:1.1rem;}
+  .prog-tab-label{font-size:.68rem;}
+  .how-oval{width:175px;height:210px;}
   .footer-cols{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:680px){
   nav{padding:0 1.2rem;}
   .nav-links{display:none;}
-  .hero{grid-template-columns:90px 1fr 90px;}
+  .hero{grid-template-columns:72px 1fr 72px;}
   .hero-center{padding:2.5rem 1rem 2rem;}
+  .hero-h{font-size:clamp(2.3rem,7vw,3.2rem);}
+  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding:3rem 1.2rem;}
+  .section-heading{font-size:clamp(2rem,6vw,3rem);}
+  .find-card{padding:2rem 1.5rem;}
+  .podcast-ep-grid{grid-template-columns:1fr;}
   .footer-cols{grid-template-columns:1fr 1fr;}
+  .footer-main{padding:3rem 1.5rem 2rem;}
 }
-@media(max-width:440px){
-  .hero{grid-template-columns:70px 1fr 70px;}
+@media(max-width:480px){
+  .hero{grid-template-columns:1fr;}
+  .hero-photo{display:none;}
+  .hero-center{padding:3rem 1.5rem 2.5rem;align-items:flex-start;text-align:left;}
+  .hero-h{font-size:clamp(2.6rem,10vw,3.8rem);max-width:100%;}
+  .hero-sub{max-width:100%;}
+  .hero-search{max-width:100%;}
+  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding:2.5rem 1rem;}
+  .stats-grid{grid-template-columns:1fr;}
+  .stats-item:nth-child(even){border-left:none;}
+  .prog-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0;}
+  .prog-tab{flex:0 0 auto;min-width:110px;}
+  .how-oval{width:145px;height:175px;}
+  .split-cta-photo{display:none;}
+  .vision h2{font-size:clamp(2rem,8vw,3rem);}
+  .footer-cols{grid-template-columns:1fr;}
+  .donate-amounts{grid-template-columns:repeat(3,1fr);}
+  .nav-give{padding:.7rem 1.4rem;font-size:.78rem;}
+  .split-cta-inner{gap:1.5rem;}
+  .get-involved-inner{gap:1.5rem;}
 }
 
 /* ── AMBIENT BLOB LAYER ── */
 #gin-ambient{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;}
+section,footer{position:relative;z-index:1;}
 
 /* ── GRAIN TEXTURE ── */
 .gin-grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:0.038;
@@ -591,6 +625,36 @@ a,button,label,select,input,textarea{cursor:none!important;}
 </style>
 </head>
 <body>
+<div id="gin-cursor">👟</div>
+<div class="gin-grain"></div>
+<div id="gin-ambient" aria-hidden="true">
+  <!-- hero zone -->
+  <div class="blob blob-pink" style="width:820px;height:820px;top:-120px;left:-220px;--bd:20s;--btx:55px;--bty:25px;--bs:1.1;"></div>
+  <div class="blob blob-pu" style="width:640px;height:640px;top:40px;right:-180px;--bd:24s;--bdel:-7s;--btx:-35px;--bty:48px;--bs:1.08;"></div>
+  <!-- donate / prob-sol zone -->
+  <div class="blob blob-cy" style="width:700px;height:700px;top:720px;left:-170px;--bd:18s;--bdel:-5s;--btx:30px;--bty:-22px;--bs:1.1;"></div>
+  <div class="blob blob-go" style="width:540px;height:540px;top:950px;right:-140px;--bd:22s;--bdel:-10s;--btx:-24px;--bty:32px;--bs:1.12;"></div>
+  <!-- programs / how zone -->
+  <div class="blob blob-pink" style="width:760px;height:760px;top:1680px;right:-170px;--bd:19s;--bdel:-4s;--btx:-30px;--bty:-18px;--bs:1.09;"></div>
+  <div class="blob blob-pu" style="width:620px;height:620px;top:1920px;left:-150px;--bd:23s;--bdel:-8s;--btx:26px;--bty:36px;--bs:1.11;"></div>
+  <!-- podcast / find zone -->
+  <div class="blob blob-cy" style="width:720px;height:720px;top:2680px;left:-180px;--bd:17s;--bdel:-3s;--btx:35px;--bty:-28px;--bs:1.08;"></div>
+  <div class="blob blob-pink" style="width:620px;height:620px;top:2880px;right:-150px;--bd:21s;--bdel:-11s;--btx:-26px;--bty:22px;--bs:1.13;"></div>
+  <!-- split-cta / vision zone -->
+  <div class="blob blob-go" style="width:560px;height:560px;top:3520px;left:-140px;--bd:16s;--bdel:-9s;--btx:22px;--bty:28px;--bs:1.09;"></div>
+  <div class="blob blob-pu" style="width:680px;height:680px;top:3640px;right:-160px;--bd:20s;--bdel:-6s;--btx:-28px;--bty:-20px;--bs:1.1;"></div>
+  <!-- stats / bottom zone -->
+  <div class="blob blob-pink" style="width:660px;height:660px;top:4360px;left:-160px;--bd:22s;--bdel:-2s;--btx:30px;--bty:-16px;--bs:1.08;"></div>
+  <div class="blob blob-cy" style="width:540px;height:540px;top:4640px;right:-130px;--bd:18s;--bdel:-13s;--btx:-18px;--bty:25px;--bs:1.1;"></div>
+  <div class="blob blob-pu" style="width:580px;height:580px;top:5050px;left:18%;--bd:21s;--bdel:-7s;--btx:20px;--bty:-22px;--bs:1.09;"></div>
+  <!-- particles -->
+  <div class="ptcl blob-pink" style="width:12px;height:12px;top:14%;left:8%;--op:0.42;--d:7s;--del:-1s;--x1:24px;--y1:-32px;--x2:-20px;--y2:-56px;--x3:16px;--y3:-22px;"></div>
+  <div class="ptcl blob-pu" style="width:9px;height:9px;top:28%;right:10%;--op:0.34;--d:9s;--del:-4s;--x1:-20px;--y1:-28px;--x2:16px;--y2:-48px;--x3:-12px;--y3:-16px;"></div>
+  <div class="ptcl blob-cy" style="width:10px;height:10px;top:46%;left:5%;--op:0.36;--d:11s;--del:-6s;--x1:22px;--y1:-30px;--x2:-18px;--y2:-52px;--x3:14px;--y3:-20px;"></div>
+  <div class="ptcl blob-go" style="width:8px;height:8px;top:61%;right:7%;--op:0.30;--d:8s;--del:-3s;--x1:-16px;--y1:-22px;--x2:12px;--y2:-40px;--x3:-8px;--y3:-14px;"></div>
+  <div class="ptcl blob-pink" style="width:11px;height:11px;top:76%;left:14%;--op:0.38;--d:10s;--del:-7s;--x1:18px;--y1:-28px;--x2:-14px;--y2:-46px;--x3:10px;--y3:-18px;"></div>
+  <div class="ptcl blob-pu" style="width:7px;height:7px;top:90%;right:18%;--op:0.28;--d:12s;--del:-5s;--x1:-12px;--y1:-18px;--x2:8px;--y2:-34px;--x3:-6px;--y3:-10px;"></div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -608,15 +672,6 @@ a,button,label,select,input,textarea{cursor:none!important;}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="splat-wrap" aria-hidden="true">
-    <div class="blob blob-pink" style="width:680px;height:680px;top:-200px;right:-150px;--bd:16s;--btx:40px;--bty:30px;"></div>
-    <div class="blob blob-pu" style="width:520px;height:520px;bottom:-120px;left:8%;--bd:18s;--bdel:-5s;--btx:-30px;--bty:-40px;--bs:1.2;"></div>
-    <div class="blob blob-cy" style="width:400px;height:400px;top:15%;left:35%;--bd:12s;--bdel:-8s;--btx:25px;--bty:20px;"></div>
-    <div class="ptcl blob-pink" style="width:10px;height:10px;top:22%;left:18%;--op:0.45;--d:7s;--del:-1s;--x1:22px;--y1:-28px;--x2:-18px;--y2:-52px;--x3:14px;--y3:-18px;"></div>
-    <div class="ptcl blob-pu" style="width:7px;height:7px;top:58%;left:12%;--op:0.35;--d:9s;--del:-3s;--x1:-16px;--y1:-22px;--x2:12px;--y2:-40px;--x3:-8px;--y3:-12px;"></div>
-    <div class="ptcl blob-cy" style="width:9px;height:9px;top:38%;right:16%;--op:0.38;--d:11s;--del:-2s;--x1:18px;--y1:-32px;--x2:-14px;--y2:-55px;--x3:10px;--y3:-20px;"></div>
-    <div class="ptcl blob-pink" style="width:6px;height:6px;top:72%;right:28%;--op:0.30;--d:8s;--del:-5s;--x1:-20px;--y1:-18px;--x2:16px;--y2:-38px;--x3:-10px;--y3:-14px;"></div>
-  </div>
   <div class="hero-photo">
     <img src="images/founder-2.jpg" alt="Women supported by Go Inspire Now">
   </div>
@@ -637,12 +692,6 @@ a,button,label,select,input,textarea{cursor:none!important;}
 
 <!-- DONATE STRIP -->
 <section class="donate-strip">
-  <div class="splat-wrap" aria-hidden="true">
-    <div class="blob blob-pink" style="width:480px;height:480px;top:-160px;left:-120px;--bd:15s;--btx:25px;--bty:20px;"></div>
-    <div class="blob blob-pu" style="width:380px;height:380px;bottom:-120px;right:-100px;--bd:17s;--bdel:-6s;--btx:-20px;--bty:-30px;--bs:1.1;"></div>
-    <div class="ptcl blob-pink" style="width:8px;height:8px;top:28%;right:25%;--op:0.40;--d:8s;--del:-2s;--x1:16px;--y1:-24px;--x2:-12px;--y2:-44px;--x3:10px;--y3:-16px;"></div>
-    <div class="ptcl blob-pu" style="width:6px;height:6px;bottom:22%;left:18%;--op:0.32;--d:10s;--del:-4s;--x1:-14px;--y1:-18px;--x2:10px;--y2:-36px;--x3:-8px;--y3:-10px;"></div>
-  </div>
   <div class="donate-strip-inner">
     <div class="donate-text rv">
       <h2>An unexpected life crisis can feel overwhelming and isolating for so many women. <em>Together, we can change that.</em></h2>
@@ -673,12 +722,6 @@ a,button,label,select,input,textarea{cursor:none!important;}
 
 <!-- PROBLEM / SOLUTION -->
 <section class="prob-sol">
-  <div class="splat-wrap" aria-hidden="true">
-    <div class="blob blob-pu" style="width:500px;height:500px;top:-160px;right:-130px;--bd:14s;--btx:-30px;--bty:25px;"></div>
-    <div class="blob blob-pink" style="width:400px;height:400px;bottom:-130px;left:-100px;--bd:16s;--bdel:-4s;--btx:20px;--bty:-30px;--bs:1.15;"></div>
-    <div class="ptcl blob-pink" style="width:9px;height:9px;top:22%;left:7%;--op:0.38;--d:9s;--del:-1s;--x1:18px;--y1:-26px;--x2:-14px;--y2:-48px;--x3:12px;--y3:-18px;"></div>
-    <div class="ptcl blob-pu" style="width:7px;height:7px;bottom:18%;right:10%;--op:0.30;--d:11s;--del:-3s;--x1:-16px;--y1:-20px;--x2:12px;--y2:-38px;--x3:-8px;--y3:-12px;"></div>
-  </div>
   <div class="prob-sol-inner">
     <h2 class="rv">Every year, thousands of women face life&rsquo;s hardest moments without a community standing beside them.</h2>
     <div class="prob-sol-cols">
@@ -804,12 +847,6 @@ a,button,label,select,input,textarea{cursor:none!important;}
 
 <!-- PODCAST HOME -->
 <section class="podcast-home">
-  <div class="splat-wrap" aria-hidden="true">
-    <div class="blob blob-pink" style="width:500px;height:500px;top:-160px;left:-130px;--bd:15s;--btx:28px;--bty:22px;"></div>
-    <div class="blob blob-cy" style="width:420px;height:420px;bottom:-130px;right:-110px;--bd:17s;--bdel:-5s;--btx:-22px;--bty:-30px;--bs:1.12;"></div>
-    <div class="ptcl blob-pink" style="width:9px;height:9px;top:20%;right:16%;--op:0.38;--d:8s;--del:-2s;--x1:18px;--y1:-26px;--x2:-14px;--y2:-46px;--x3:10px;--y3:-16px;"></div>
-    <div class="ptcl blob-pu" style="width:6px;height:6px;bottom:28%;left:10%;--op:0.30;--d:10s;--del:-5s;--x1:-14px;--y1:-18px;--x2:10px;--y2:-34px;--x3:-8px;--y3:-10px;"></div>
-  </div>
   <div class="podcast-home-inner">
     <div class="podcast-home-badge rv">Now Streaming</div>
     <h2 class="rv">The Go Inspire Now Podcast</h2>
@@ -1111,7 +1148,5 @@ document.querySelectorAll('.stats-num[data-target]').forEach(el => {
   });
 })();
 </script>
-<div id="gin-cursor">👟</div>
-<div class="gin-grain"></div>
 </body>
 </html>
