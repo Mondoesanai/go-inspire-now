@@ -494,7 +494,7 @@ footer{background:var(--lav-mid);}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.25,1,.5,1),transform .7s cubic-bezier(.25,1,.5,1);}
 .rv.in{opacity:1;transform:none;}
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE — 960px ── */
 @media(max-width:960px){
   .donate-strip-inner{grid-template-columns:1fr;gap:2.5rem;}
   .prob-sol-cols{grid-template-columns:1fr;gap:2rem;}
@@ -511,84 +511,121 @@ footer{background:var(--lav-mid);}
   .podcast-ep-grid{grid-template-columns:1fr 1fr;}
 }
 
-/* ── TABLET ── */
+/* ── TABLET — 768px ── */
 @media(max-width:768px){
-  /* hide flanking photos at tablet — hero goes full center */
+  html{overflow-x:hidden;}
+
+  /* hero: full-width, centered, breathable */
   .hero{grid-template-columns:1fr;}
   .hero-photo{display:none;}
-  .hero-center{padding:3.5rem 2rem 3rem;align-items:center;text-align:center;}
-  .hero-h{font-size:clamp(2.8rem,8vw,4rem);max-width:100%;}
-  .hero-sub{max-width:100%;}
-  .hero-search{max-width:420px;}
-
-  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding-top:3.5rem;padding-bottom:3.5rem;}
-  .prog-tab-icon{width:40px;height:40px;font-size:1.1rem;}
-  .prog-tab-label{font-size:.68rem;}
-  .how-oval{width:175px;height:210px;}
-  .footer-cols{grid-template-columns:1fr 1fr;}
-  .split-cta-photo{display:none;}
-  .split-cta-inner{grid-template-columns:1fr;}
-}
-
-/* ── MOBILE ── */
-@media(max-width:680px){
-  nav{padding:0 1.25rem;}
-  .nav-links{display:none;}
-  .nav-give{padding:.72rem 1.5rem;font-size:.8rem;}
-
-  /* hero: bold & clean, centered */
-  .hero-center{padding:3rem 1.5rem 2.5rem;}
-  .hero-kicker{font-size:.95rem;}
-  .hero-h{font-size:clamp(2.5rem,9vw,3.6rem);line-height:1;}
-  .hero-sub{font-size:.92rem;}
+  .hero-center{padding:5rem 2.5rem 4rem;align-items:center;text-align:center;}
+  .hero-h{font-size:clamp(3.2rem,8vw,5rem);max-width:100%;line-height:0.95;}
+  .hero-sub{font-size:1.1rem;line-height:1.7;max-width:100%;}
   .hero-search{max-width:100%;}
 
-  /* section rhythm — consistent breathing room */
-  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding:3rem 1.25rem;}
+  /* section padding: generous, consistent */
+  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding:5rem 2.5rem;}
 
-  /* donate widget full-width, cleaner */
-  .donate-strip-inner{gap:2rem;}
-  .donate-widget{padding:1.5rem;}
-  .donate-amounts{grid-template-columns:repeat(3,1fr);gap:.4rem;}
+  /* splits collapse */
+  .split-cta-photo{display:none;}
+  .split-cta-inner{grid-template-columns:1fr;}
 
-  /* prob-sol */
-  .prob-sol h2{font-size:clamp(2rem,7vw,2.8rem);}
+  /* text scales up */
+  .donate-text h2{font-size:clamp(1.55rem,3.5vw,2.1rem);}
+  .donate-text p,.prob-sol-col p,.prog-panel-text p,.split-cta-text p.body,.find-card p,.get-involved-text p{font-size:1rem;line-height:1.72;}
 
-  /* programs — scrollable tabs */
-  .section-heading{font-size:clamp(1.9rem,6vw,2.8rem);}
-  .prog-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;gap:0;padding-bottom:.25rem;}
-  .prog-tab{flex:0 0 auto;min-width:96px;padding:.8rem 0 1rem;}
-  .prog-tab-icon{width:38px;height:38px;font-size:1rem;}
-  .prog-tab-label{font-size:.65rem;}
+  /* programs */
+  .prog-panel.active{grid-template-columns:1fr;}
   .prog-panel-photos{display:none;}
+  .prog-tab-icon{width:42px;height:42px;font-size:1.1rem;}
+  .prog-tab-label{font-size:.7rem;}
 
-  /* how it works */
-  .how-oval{width:150px;height:180px;}
-
-  /* find card */
-  .find-card{padding:2rem 1.5rem;}
-
-  /* vision */
-  .vision h2{font-size:clamp(2rem,8vw,3rem);}
-
-  /* stats — single column, clean */
-  .stats-grid{grid-template-columns:1fr;gap:0;}
-  .stats-item{border-right:none;border-left:none;padding:1.25rem 0;}
-  .stats-item:nth-child(even){border-left:none;}
-  .stats-num{font-size:clamp(2.2rem,8vw,3rem);}
-
-  /* get involved */
-  .get-involved-inner{gap:1.5rem;}
-  .get-link{padding:.9rem 1.2rem;}
-
-  /* podcast */
+  /* podcast: 1 col */
   .podcast-ep-grid{grid-template-columns:1fr;}
 
   /* footer */
-  .footer-main{padding:3rem 1.25rem 2rem;}
+  .footer-top{grid-template-columns:1fr;gap:2rem;}
   .footer-cols{grid-template-columns:1fr 1fr;}
+  .footer-main{padding:4rem 2.5rem 3rem;}
   .footer-newsletter{flex-direction:column;gap:.5rem;}
   .footer-newsletter input,.footer-newsletter button{width:100%;}
+}
+
+/* ── MOBILE — 600px ── */
+@media(max-width:600px){
+  /* nav */
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .nav-give{padding:.8rem 1.75rem;font-size:.84rem;}
+
+  /* hero: bold, left-aligned, breathing */
+  .hero-center{padding:4.5rem 1.5rem 4rem;align-items:flex-start;text-align:left;}
+  .hero-kicker{font-size:1.05rem;margin-bottom:.9rem;}
+  .hero-h{font-size:clamp(3rem,11vw,4.5rem);line-height:0.95;margin-bottom:1.3rem;}
+  .hero-sub{font-size:1.05rem;line-height:1.68;}
+
+  /* section rhythm */
+  .donate-strip,.prob-sol,.programs,.how,.podcast-home,.find,.split-cta,.vision,.stats,.pull-quote,.get-involved{padding:4.5rem 1.5rem;}
+
+  /* larger section headings */
+  .section-heading{font-size:clamp(2.6rem,9vw,3.8rem);}
+
+  /* donate */
+  .donate-strip-inner{gap:2.5rem;}
+  .donate-text h2{font-size:clamp(1.6rem,5vw,2rem);line-height:1.3;}
+  .donate-widget{padding:2rem 1.5rem;}
+  .donate-amounts{grid-template-columns:repeat(3,1fr);gap:.45rem;}
+  .donate-amt{font-size:.88rem;padding:.6rem .25rem;}
+
+  /* prob-sol */
+  .prob-sol h2{font-size:clamp(2.2rem,9vw,3.4rem);margin-bottom:2rem;}
+  .prob-sol-cols{grid-template-columns:1fr;gap:1.5rem;}
+  .prob-sol-col p{font-size:1rem;line-height:1.7;}
+
+  /* programs tabs */
+  .prog-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:.35rem;}
+  .prog-tab{flex:0 0 auto;min-width:105px;padding:.9rem 0 1.1rem;}
+  .prog-tab-label{font-size:.72rem;}
+  .prog-panel-text h3{font-size:1.45rem;line-height:1.3;}
+  .prog-panel-text p{font-size:1rem;}
+
+  /* how */
+  .how h2{font-size:1.5rem;}
+  .how-oval{width:165px;height:200px;}
+  .how-step{font-size:1.1rem;line-height:1.55;}
+
+  /* podcast */
+  .podcast-home h2{font-size:clamp(1.8rem,6vw,2.4rem);}
+  .podcast-ep-grid{grid-template-columns:1fr;}
+  .podcast-ep-info h4{font-size:1.05rem;}
+
+  /* find */
+  .find-card{padding:3rem 2rem;}
+  .find-card h2{font-size:1.7rem;}
+  .find-card p{font-size:1rem;}
+
+  /* vision */
+  .vision h2{font-size:clamp(2.2rem,9vw,3.6rem);line-height:1.05;}
+
+  /* stats: single column, bold numbers */
+  .stats-grid{grid-template-columns:1fr;}
+  .stats-item{border-right:none;border-left:none;padding:1.75rem 0;}
+  .stats-item:nth-child(even){border-left:none;}
+  .stats-item:last-child{border-bottom:1.5px solid var(--border);}
+  .stats-num{font-size:clamp(3rem,12vw,5rem);}
+  .stats-label{font-size:.88rem;letter-spacing:.05em;}
+
+  /* get involved */
+  .get-involved-text h2{font-size:clamp(1.8rem,6vw,2.4rem);}
+  .get-involved-inner{gap:2rem;}
+  .get-link{padding:1.1rem 1.35rem;font-size:.92rem;}
+
+  /* footer */
+  .footer-main{padding:3.5rem 1.5rem 2.5rem;}
+  .footer-cols{grid-template-columns:1fr;}
+
+  /* hide verbose body copy — keeps mobile clean */
+  .m-hide{display:none!important;}
 }
 
 /* ── AMBIENT BLOB LAYER ── */
@@ -734,7 +771,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
   <div class="donate-strip-inner">
     <div class="donate-text rv">
       <h2>An unexpected life crisis can feel overwhelming and isolating for so many women. <em>Together, we can change that.</em></h2>
-      <p>Your monthly gift can help one woman feel seen, supported, and not alone on her journey.</p>
+      <p class="m-hide">Your monthly gift can help one woman feel seen, supported, and not alone on her journey.</p>
     </div>
     <div class="donate-widget rv">
       <div class="donate-tabs">
@@ -801,7 +838,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
       <div class="prog-panel-text">
         <h3>Has your life been impacted by an unexpected crisis?</h3>
         <p>You will find a safe community of women who understand what you are going through. You will hear teachings that will empower you and find connections that will encourage you at every step.</p>
-        <p>Every participant receives practical support and resources tailored to their journey. This life-changing experience will connect you to hope and show you a community is walking with you.</p>
+        <p class="m-hide">Every participant receives practical support and resources tailored to their journey. This life-changing experience will connect you to hope and show you a community is walking with you.</p>
         <a href="events.html" class="btn-pk">Find Support</a>
       </div>
       <div class="prog-panel-photos">
@@ -814,7 +851,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
       <div class="prog-panel-text">
         <h3>Walking with single moms into strength and purpose.</h3>
         <p>Our Single Moms program provides a consistent community circle where moms find encouragement, share experiences, and receive practical resources. You are not alone &mdash; we walk this road together.</p>
-        <p>Monthly gatherings, mentorship connections, and a network of support built just for you and your family.</p>
+        <p class="m-hide">Monthly gatherings, mentorship connections, and a network of support built just for you and your family.</p>
         <a href="events.html" class="btn-pk">Learn More</a>
       </div>
       <div class="prog-panel-photos">
@@ -827,7 +864,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
       <div class="prog-panel-text">
         <h3>Building stronger families from the inside out.</h3>
         <p>Families are the foundation of everything. Our family support programs connect entire households to resources, community, and the encouragement they need to grow together through life&rsquo;s challenges.</p>
-        <p>From workshops to community events, we help families move forward and thrive together.</p>
+        <p class="m-hide">From workshops to community events, we help families move forward and thrive together.</p>
         <a href="events.html" class="btn-pk">Get Involved</a>
       </div>
       <div class="prog-panel-photos">
@@ -889,7 +926,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
   <div class="podcast-home-inner">
     <div class="podcast-home-badge rv">Now Streaming</div>
     <h2 class="rv">The Go Inspire Now Podcast</h2>
-    <p class="sub rv">Real conversations with women who have walked through life&rsquo;s hardest seasons &mdash; and come out the other side with hope, purpose, and community. New episodes every week.</p>
+    <p class="sub rv m-hide">Real conversations with women who have walked through life&rsquo;s hardest seasons &mdash; and come out the other side with hope, purpose, and community. New episodes every week.</p>
     <div class="podcast-ep-grid">
       <a href="podcast.html" class="podcast-ep-card rv">
         <div class="podcast-ep-thumb">
@@ -974,7 +1011,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
     <div class="split-cta-text rv">
       <p class="label">The GIN movement</p>
       <h2>Courage is a stance. Community is the action.</h2>
-      <p class="body">There are many ways to get involved, but the best way is by starting a support group in your local community. With our digital resources and coaching, you will have everything you need to lead with confidence. Your community will help women walk into a life of hope &mdash; and you will be walking beside them every step of the way.</p>
+      <p class="body m-hide">There are many ways to get involved, but the best way is by starting a support group in your local community. With our digital resources and coaching, you will have everything you need to lead with confidence. Your community will help women walk into a life of hope &mdash; and you will be walking beside them every step of the way.</p>
       <a href="contact.html" class="split-cta-btn">Start a Group</a>
     </div>
   </div>
@@ -1042,7 +1079,7 @@ a,button,label,select,input,textarea{cursor:none!important;}
   <div class="get-involved-inner">
     <div class="get-involved-text rv">
       <h2>You can change lives with love!</h2>
-      <p>Want to join us in walking alongside women in their hardest moments? We can get you started today.</p>
+      <p class="m-hide">Want to join us in walking alongside women in their hardest moments? We can get you started today.</p>
     </div>
     <div class="get-involved-links rv">
       <a href="donate.html" class="get-link">
